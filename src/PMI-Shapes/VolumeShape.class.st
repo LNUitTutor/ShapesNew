@@ -38,6 +38,17 @@ VolumeShape >> lateralArea [
 	^ self subclassResponsibility
 ]
 
+{ #category : #printing }
+VolumeShape >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPutAll: ' ( base = '.
+	base printOn: aStream.
+	aStream nextPutAll: ', h = '.
+	height printOn: aStream.
+	aStream nextPutAll: ' )'
+]
+
 { #category : #calculating }
 VolumeShape >> surfaceArea [
 
